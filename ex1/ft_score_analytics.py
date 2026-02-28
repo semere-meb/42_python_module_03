@@ -10,7 +10,7 @@ def analyze_scores():
             " python3 ft_score_analytics.py <score1> <score2> ..."
         )
     else:
-        scores: int = [int(score) for score in sys.argv[1:]]
+        scores: list = [int(score) for score in sys.argv[1:]]
         print(f"Scores processed: {scores}")
         print(f"Total players: {len(scores)}")
         print(f"Total score: {sum(scores)}")
