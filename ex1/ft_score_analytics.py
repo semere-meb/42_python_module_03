@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+
+
 import sys
 
 
@@ -7,10 +10,15 @@ def analyze_scores():
     if len(sys.argv) == 1:
         print(
             "No scores provided. Usage:" +
-            " python3 ft_score_analytics.py <score1> <score2> ..."
-        )
+            " python3 ft_score_analytics.py <score1> <score2> ...")
     else:
-        scores: list = [int(score) for score in sys.argv[1:]]
+        scores: list = []
+        for arg in sys.argv[1:]:
+            try:
+                scores += [int(arg)]
+            except ValueError:
+                pass
+
         print(f"Scores processed: {scores}")
         print(f"Total players: {len(scores)}")
         print(f"Total score: {sum(scores)}")
