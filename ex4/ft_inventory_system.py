@@ -21,6 +21,9 @@ def main() -> None:
     max_items = [item for item in items if items[item] == max(items.values())]
     min_items = [item for item in items if items[item] == min(items.values())]
 
+    min_items_count = items[max_items[0]] if len(max_items) else '0'
+    max_items_count = items[min_items[0]] if len(min_items) else '0'
+
     moderate = {item: items[item] for item in items if items[item] >= 4}
     scarce = {item: items[item] for item in items if items[item] < 4}
 
@@ -36,8 +39,8 @@ def main() -> None:
         print(f"{itm}: {items[itm]} units ({items[itm] * 100 / all_count}%)")
 
     print("\n=== Inventory Statistics ===")
-    print(f"Most abundant: {max_items} ({items[max_items[0]]} unit)")
-    print(f"Least abundant: {min_items} ({items[min_items[0]]} unit)")
+    print(f"Most abundant: {max_items} ({max_items_count} unit)")
+    print(f"Least abundant: {min_items} ({min_items_count} unit)")
 
     print("\n=== Item Categories ===")
     print(f"Moderate: {moderate}")
@@ -47,8 +50,8 @@ def main() -> None:
     print(f"Restock needed: {restock_needed}")
 
     print("\n=== Dictionary Properties Demo ===")
-    print(f"Dictionary keys: {set(items.keys())}")
-    print(f"Dictionary values: {set(items.values())}")
+    print(f"Dictionary keys: {list(set(items.keys()))}")
+    print(f"Dictionary values: {list(set(items.values()))}")
     print(f"Sample lookup - '{test_itm}' in inventory: {test_itm in items}")
 
 
