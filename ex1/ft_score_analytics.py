@@ -19,13 +19,24 @@ def analyze_scores():
             except ValueError:
                 pass
 
+        try:
+            average = sum(scores) / len(scores)
+            max_score = max(scores)
+            min_score = min(scores)
+            range = max_score - min_score
+        except (ZeroDivisionError, ValueError):
+            average = "No scores"
+            max_score = "No scores"
+            min_score = "No scores"
+            range = "No scores"
+
         print(f"Scores processed: {scores}")
         print(f"Total players: {len(scores)}")
         print(f"Total score: {sum(scores)}")
-        print(f"Average socre: {sum(scores) / len(scores)}")
-        print(f"High score: {max(scores)}")
-        print(f"Low socre: {min(scores)}")
-        print(f"Score range: {max(scores) - min(scores)}")
+        print(f"Average socre: {average}")
+        print(f"High score: {max_score}")
+        print(f"Low socre: {min_score}")
+        print(f"Score range: {range}")
 
 
 if __name__ == "__main__":
