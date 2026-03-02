@@ -8,7 +8,7 @@ def distance(p1: tuple, p2: tuple) -> int:
     return math.sqrt(sum((p2[i] - p1[i]) ** 2 for i in [0, 1, 2]))
 
 
-def parse(arg: str) -> tuple:
+def parse_coordinate(arg: str) -> tuple:
     numbers_str = arg.split(",")
     numbers = []
 
@@ -26,7 +26,7 @@ def parse(arg: str) -> tuple:
         return tuple(numbers)
 
 
-def demo() -> None:
+def main() -> None:
     print("=== Game Coordinate System ===")
     p1: tuple = (0, 0, 0)
 
@@ -37,13 +37,13 @@ def demo() -> None:
 
     val: str = "3,4,0"
     print(f'\nParsing coordinates: "{val}"')
-    p2 = parse(val)
+    p2 = parse_coordinate(val)
     if p2:
         print(f"Distance between {p2} and {p1}: {distance(p1, p2)}")
 
     val = "abc,def,ghi"
     print(f'\nParsing invalid coordinates: "{val}"')
-    p2 = parse(val)
+    p2 = parse_coordinate(val)
     if p2:
         print(f"Distance between {p2} and {p1}: {distance(p1, p2)}")
 
@@ -55,4 +55,4 @@ def demo() -> None:
 
 
 if __name__ == "__main__":
-    demo()
+    main()

@@ -4,7 +4,7 @@
 import sys
 
 
-def parse_args() -> None:
+def parse_commands() -> None:
     print("=== Command Quest ===")
 
     if len(sys.argv) == 1:
@@ -22,4 +22,4 @@ def parse_args() -> None:
 
 
 if __name__ == "__main__":
-    parse_args()
+    parse_commands()

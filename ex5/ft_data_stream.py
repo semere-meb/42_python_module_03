@@ -24,7 +24,7 @@ def n_prime() -> typing.Generator[int, None, None]:
         number += 1
 
 
-def demo() -> None:
+def main() -> None:
     events = [
         {
             "id": 1,
@@ -417,4 +417,4 @@ def demo() -> None:
 
 
 if __name__ == "__main__":
-    demo()
+    main()

@@ -13,7 +13,7 @@ def parse_args(args: list) -> dict:
     return data
 
 
-def demo() -> None:
+def main() -> None:
     print("=== Inventory System Analysis ===")
 
     items = parse_args(sys.argv[1:])
@@ -53,4 +53,4 @@ def demo() -> None:
 
 
 if __name__ == "__main__":
-    demo()
+    main()

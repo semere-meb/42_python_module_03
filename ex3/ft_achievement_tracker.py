@@ -68,7 +68,7 @@ def demo() -> None:
         counts[achv] += 1
     rares = {achv for achv in counts if counts[achv] == 1}
 
-    print("=== Achievement Tracker System ===")
+    print("=== Achievement Tracker System ===\n")
     for player in achvs:
         print(f"Player {player} acievements: {player_achvs[player]}")
 
