@@ -47,15 +47,9 @@ def demo() -> None:
     print(f"Restock needed: {restock_needed}")
 
     print("\n=== Dictionary Properties Demo ===")
-    print("Dictionary keys: ", end="")
-    for key in items.keys():
-        print(key, end=", ")
-
-    print("\nDictionary values: ", end="")
-    for value in items.values():
-        print(value, end=", ")
-
-    print(f"\nSample lookup - '{test_itm}' in inventory: {test_itm in items}")
+    print(f"Dictionary keys: {set(items.keys())}")
+    print(f"Dictionary values: {set(items.values())}")
+    print(f"Sample lookup - '{test_itm}' in inventory: {test_itm in items}")
 
 
 if __name__ == "__main__":
